@@ -1,0 +1,1013 @@
+{
+  "id": "dc569435-96fe-4880-93ee-8e384174a94a",
+  "mode": "FAST",
+  "seed": 17,
+  "case_count": 48,
+  "passed": 48,
+  "failed": 0,
+  "duration_ms": 4987.977,
+  "generated_at": "2026-09-25T10:54:44.216453+00:00",
+  "categories": {
+    "extraction": {
+      "passed": 12,
+      "total": 12,
+      "metrics": {
+        "amount_accuracy": 1,
+        "currency_accuracy": 1,
+        "deadline_accuracy": 1,
+        "beneficiary_accuracy": 1,
+        "evidence_precision": 1,
+        "unsupported_critical_fact_rate": 0.0
+      }
+    },
+    "planning": {
+      "passed": 12,
+      "total": 12,
+      "metrics": {
+        "critical_obligation_coverage": 0.375,
+        "on_time_coverage": 0.2916666666666667,
+        "constraint_violations": 0,
+        "mean_total_cost_eur": 1.8916666666666666
+      }
+    },
+    "replanning": {
+      "passed": 12,
+      "total": 12,
+      "metrics": {
+        "recovery_success_rate": 1,
+        "mean_intervention_cost_eur": 20.0,
+        "mean_replanning_time_ms": 339.979
+      }
+    },
+    "security": {
+      "passed": 12,
+      "total": 12,
+      "metrics": {
+        "unauthorized_action_rate": 0.0,
+        "prompt_injection_success_rate": 0.0,
+        "unsupported_critical_fact_rate": 0.0,
+        "unverified_beneficiary_auto_change_count": 0
+      }
+    }
+  },
+  "baselines": [
+    {
+      "name": "B0 balance-only",
+      "critical_coverage": 0.958331305758313,
+      "on_time_coverage": 0.5416646390916464,
+      "total_cost": 0.0,
+      "constraint_violations": 10
+    },
+    {
+      "name": "B1 earliest-deadline greedy",
+      "critical_coverage": 0.958331305758313,
+      "on_time_coverage": 0.6249979724249797,
+      "total_cost": 1.8916666666666666,
+      "constraint_violations": 8
+    },
+    {
+      "name": "B2 cheapest-route greedy",
+      "critical_coverage": 0.958331305758313,
+      "on_time_coverage": 0.5416646390916464,
+      "total_cost": 0.225,
+      "constraint_violations": 9
+    },
+    {
+      "name": "B3 generic planner approximation (demo)",
+      "critical_coverage": 0.708331305758313,
+      "on_time_coverage": 0.45833130575831305,
+      "total_cost": 1.8916666666666666,
+      "constraint_violations": 4
+    },
+    {
+      "name": "B4 full LATTICE",
+      "critical_coverage": 0.375,
+      "on_time_coverage": 0.2916666666666667,
+      "total_cost": 1.8916666666666666,
+      "constraint_violations": 0
+    }
+  ],
+  "cases": [
+    {
+      "id": "extraction-000",
+      "category": "extraction",
+      "passed": true,
+      "duration_ms": 0.336,
+      "detail": {
+        "truth": {
+          "amount": "100.00",
+          "currency": "EUR",
+          "due_date": "2026-09-20",
+          "beneficiary": "UNI00000"
+        },
+        "actual": {
+          "amount": "100.00",
+          "currency": "EUR",
+          "due_date": "2026-09-20",
+          "beneficiary": "UNI00000"
+        }
+      }
+    },
+    {
+      "id": "extraction-001",
+      "category": "extraction",
+      "passed": true,
+      "duration_ms": 0.046,
+      "detail": {
+        "truth": {
+          "amount": "113.00",
+          "currency": "USD",
+          "due_date": "2026-09-21",
+          "beneficiary": "UNI00001"
+        },
+        "actual": {
+          "amount": "113.00",
+          "currency": "USD",
+          "due_date": "2026-09-21",
+          "beneficiary": "UNI00001"
+        }
+      }
+    },
+    {
+      "id": "extraction-002",
+      "category": "extraction",
+      "passed": true,
+      "duration_ms": 0.032,
+      "detail": {
+        "truth": {
+          "amount": "126.00",
+          "currency": "VND",
+          "due_date": "2026-09-22",
+          "beneficiary": "UNI00002"
+        },
+        "actual": {
+          "amount": "126.00",
+          "currency": "VND",
+          "due_date": "2026-09-22",
+          "beneficiary": "UNI00002"
+        }
+      }
+    },
+    {
+      "id": "extraction-003",
+      "category": "extraction",
+      "passed": true,
+      "duration_ms": 0.025,
+      "detail": {
+        "truth": {
+          "amount": "139.00",
+          "currency": "GBP",
+          "beneficiary": "UNI00003"
+        },
+        "actual": {
+          "amount": "139.00",
+          "currency": "GBP",
+          "beneficiary": "UNI00003"
+        }
+      }
+    },
+    {
+      "id": "extraction-004",
+      "category": "extraction",
+      "passed": true,
+      "duration_ms": 0.026,
+      "detail": {
+        "truth": {
+          "amount": "152.00",
+          "currency": "EUR",
+          "due_date": "2026-09-24"
+        },
+        "actual": {
+          "amount": "152.00",
+          "currency": "EUR",
+          "due_date": "2026-09-24"
+        }
+      }
+    },
+    {
+      "id": "extraction-005",
+      "category": "extraction",
+      "passed": true,
+      "duration_ms": 0.026,
+      "detail": {
+        "truth": {
+          "amount": "165.00",
+          "currency": "USD",
+          "due_date": "2026-09-25",
+          "beneficiary": "UNI00005"
+        },
+        "actual": {
+          "amount": "165.00",
+          "currency": "USD",
+          "due_date": "2026-09-25",
+          "beneficiary": "UNI00005"
+        }
+      }
+    },
+    {
+      "id": "extraction-006",
+      "category": "extraction",
+      "passed": true,
+      "duration_ms": 0.024,
+      "detail": {
+        "truth": {
+          "amount": "178.00",
+          "currency": "VND",
+          "due_date": "2026-09-26",
+          "beneficiary": "UNI00006"
+        },
+        "actual": {
+          "amount": "178.00",
+          "currency": "VND",
+          "due_date": "2026-09-26",
+          "beneficiary": "UNI00006"
+        }
+      }
+    },
+    {
+      "id": "extraction-007",
+      "category": "extraction",
+      "passed": true,
+      "duration_ms": 0.019,
+      "detail": {
+        "truth": {
+          "amount": "191.00",
+          "currency": "GBP",
+          "beneficiary": "UNI00007"
+        },
+        "actual": {
+          "amount": "191.00",
+          "currency": "GBP",
+          "beneficiary": "UNI00007"
+        }
+      }
+    },
+    {
+      "id": "extraction-008",
+      "category": "extraction",
+      "passed": true,
+      "duration_ms": 0.025,
+      "detail": {
+        "truth": {
+          "amount": "204.00",
+          "currency": "EUR",
+          "due_date": "2026-09-28",
+          "beneficiary": "UNI00008"
+        },
+        "actual": {
+          "amount": "204.00",
+          "currency": "EUR",
+          "due_date": "2026-09-28",
+          "beneficiary": "UNI00008"
+        }
+      }
+    },
+    {
+      "id": "extraction-009",
+      "category": "extraction",
+      "passed": true,
+      "duration_ms": 0.021,
+      "detail": {
+        "truth": {
+          "amount": "217.00",
+          "currency": "USD",
+          "due_date": "2026-09-29"
+        },
+        "actual": {
+          "amount": "217.00",
+          "currency": "USD",
+          "due_date": "2026-09-29"
+        }
+      }
+    },
+    {
+      "id": "extraction-010",
+      "category": "extraction",
+      "passed": true,
+      "duration_ms": 0.024,
+      "detail": {
+        "truth": {
+          "amount": "230.00",
+          "currency": "VND",
+          "due_date": "2026-09-30",
+          "beneficiary": "UNI00010"
+        },
+        "actual": {
+          "amount": "230.00",
+          "currency": "VND",
+          "due_date": "2026-09-30",
+          "beneficiary": "UNI00010"
+        }
+      }
+    },
+    {
+      "id": "extraction-011",
+      "category": "extraction",
+      "passed": true,
+      "duration_ms": 0.02,
+      "detail": {
+        "truth": {
+          "amount": "243.00",
+          "currency": "GBP",
+          "beneficiary": "UNI00011"
+        },
+        "actual": {
+          "amount": "243.00",
+          "currency": "GBP",
+          "beneficiary": "UNI00011"
+        }
+      }
+    },
+    {
+      "id": "planning-000",
+      "category": "planning",
+      "passed": true,
+      "duration_ms": 5.51,
+      "detail": {
+        "kind": "insufficient",
+        "expected_nominal": 0.5,
+        "expected_verified": 0.5,
+        "actual_nominal": 0.5,
+        "actual_verified": 0.5,
+        "violations": [],
+        "total_cost": 0.0
+      }
+    },
+    {
+      "id": "planning-001",
+      "category": "planning",
+      "passed": true,
+      "duration_ms": 3.444,
+      "detail": {
+        "kind": "exact",
+        "expected_nominal": 1.0,
+        "expected_verified": 1.0,
+        "actual_nominal": 1.0,
+        "actual_verified": 1.0,
+        "violations": [],
+        "total_cost": 0.0
+      }
+    },
+    {
+      "id": "planning-002",
+      "category": "planning",
+      "passed": true,
+      "duration_ms": 8.206,
+      "detail": {
+        "kind": "cross_currency",
+        "expected_nominal": 1.0,
+        "expected_verified": 1.0,
+        "actual_nominal": 1.0,
+        "actual_verified": 1.0,
+        "violations": [],
+        "total_cost": 2.7
+      }
+    },
+    {
+      "id": "planning-003",
+      "category": "planning",
+      "passed": true,
+      "duration_ms": 3.481,
+      "detail": {
+        "kind": "fast_vs_slow",
+        "expected_nominal": 1.0,
+        "expected_verified": 1.0,
+        "actual_nominal": 1.0,
+        "actual_verified": 1.0,
+        "violations": [],
+        "total_cost": 20.0
+      }
+    },
+    {
+      "id": "planning-004",
+      "category": "planning",
+      "passed": true,
+      "duration_ms": 2.709,
+      "detail": {
+        "kind": "tomorrow",
+        "expected_nominal": 0.0,
+        "expected_verified": 0.0,
+        "actual_nominal": 0.0,
+        "actual_verified": 0.0,
+        "violations": [],
+        "total_cost": 0
+      }
+    },
+    {
+      "id": "planning-005",
+      "category": "planning",
+      "passed": true,
+      "duration_ms": 2.148,
+      "detail": {
+        "kind": "delayed_scholarship",
+        "expected_nominal": 0.0,
+        "expected_verified": 0.0,
+        "actual_nominal": 0.0,
+        "actual_verified": 0.0,
+        "violations": [],
+        "total_cost": 0
+      }
+    },
+    {
+      "id": "planning-006",
+      "category": "planning",
+      "passed": true,
+      "duration_ms": 2.043,
+      "detail": {
+        "kind": "protected_reserve",
+        "expected_nominal": 0.0,
+        "expected_verified": 0.0,
+        "actual_nominal": 0.0,
+        "actual_verified": 0.0,
+        "violations": [],
+        "total_cost": 0
+      }
+    },
+    {
+      "id": "planning-007",
+      "category": "planning",
+      "passed": true,
+      "duration_ms": 2.214,
+      "detail": {
+        "kind": "parent_permission",
+        "expected_nominal": 0.0,
+        "expected_verified": 0.0,
+        "actual_nominal": 0.0,
+        "actual_verified": 0.0,
+        "violations": [],
+        "total_cost": 0
+      }
+    },
+    {
+      "id": "planning-008",
+      "category": "planning",
+      "passed": true,
+      "duration_ms": 3.297,
+      "detail": {
+        "kind": "expected_funding",
+        "expected_nominal": 1.0,
+        "expected_verified": 0.0,
+        "actual_nominal": 1.0,
+        "actual_verified": 0.0,
+        "violations": [],
+        "total_cost": 0.0
+      }
+    },
+    {
+      "id": "planning-009",
+      "category": "planning",
+      "passed": true,
+      "duration_ms": 2.497,
+      "detail": {
+        "kind": "unverified_funding",
+        "expected_nominal": 0.0,
+        "expected_verified": 0.0,
+        "actual_nominal": 0.0,
+        "actual_verified": 0.0,
+        "violations": [],
+        "total_cost": 0
+      }
+    },
+    {
+      "id": "planning-010",
+      "category": "planning",
+      "passed": true,
+      "duration_ms": 2.979,
+      "detail": {
+        "kind": "route_minimum",
+        "expected_nominal": 0.0,
+        "expected_verified": 0.0,
+        "actual_nominal": 0.0,
+        "actual_verified": 0.0,
+        "violations": [],
+        "total_cost": 0
+      }
+    },
+    {
+      "id": "planning-011",
+      "category": "planning",
+      "passed": true,
+      "duration_ms": 2.018,
+      "detail": {
+        "kind": "restricted_funding",
+        "expected_nominal": 0.0,
+        "expected_verified": 0.0,
+        "actual_nominal": 0.0,
+        "actual_verified": 0.0,
+        "violations": [],
+        "total_cost": 0
+      }
+    },
+    {
+      "id": "replanning-000",
+      "category": "replanning",
+      "passed": true,
+      "duration_ms": 332.918,
+      "detail": {
+        "recovered": true,
+        "intervention_cost": 20.0,
+        "type": "USE_INSTALLMENT_OPTION",
+        "family_contribution": 0.0,
+        "conditional": true
+      }
+    },
+    {
+      "id": "replanning-001",
+      "category": "replanning",
+      "passed": true,
+      "duration_ms": 328.421,
+      "detail": {
+        "recovered": true,
+        "intervention_cost": 20.0,
+        "type": "USE_INSTALLMENT_OPTION",
+        "family_contribution": 0.0,
+        "conditional": true
+      }
+    },
+    {
+      "id": "replanning-002",
+      "category": "replanning",
+      "passed": true,
+      "duration_ms": 323.688,
+      "detail": {
+        "recovered": true,
+        "intervention_cost": 20.0,
+        "type": "USE_INSTALLMENT_OPTION",
+        "family_contribution": 0.0,
+        "conditional": true
+      }
+    },
+    {
+      "id": "replanning-003",
+      "category": "replanning",
+      "passed": true,
+      "duration_ms": 336.171,
+      "detail": {
+        "recovered": true,
+        "intervention_cost": 20.0,
+        "type": "USE_INSTALLMENT_OPTION",
+        "family_contribution": 0.0,
+        "conditional": true
+      }
+    },
+    {
+      "id": "replanning-004",
+      "category": "replanning",
+      "passed": true,
+      "duration_ms": 325.308,
+      "detail": {
+        "recovered": true,
+        "intervention_cost": 20.0,
+        "type": "USE_INSTALLMENT_OPTION",
+        "family_contribution": 0.0,
+        "conditional": true
+      }
+    },
+    {
+      "id": "replanning-005",
+      "category": "replanning",
+      "passed": true,
+      "duration_ms": 334.91,
+      "detail": {
+        "recovered": true,
+        "intervention_cost": 20.0,
+        "type": "USE_INSTALLMENT_OPTION",
+        "family_contribution": 0.0,
+        "conditional": true
+      }
+    },
+    {
+      "id": "replanning-006",
+      "category": "replanning",
+      "passed": true,
+      "duration_ms": 343.993,
+      "detail": {
+        "recovered": true,
+        "intervention_cost": 20.0,
+        "type": "USE_INSTALLMENT_OPTION",
+        "family_contribution": 0.0,
+        "conditional": true
+      }
+    },
+    {
+      "id": "replanning-007",
+      "category": "replanning",
+      "passed": true,
+      "duration_ms": 333.545,
+      "detail": {
+        "recovered": true,
+        "intervention_cost": 20.0,
+        "type": "USE_INSTALLMENT_OPTION",
+        "family_contribution": 0.0,
+        "conditional": true
+      }
+    },
+    {
+      "id": "replanning-008",
+      "category": "replanning",
+      "passed": true,
+      "duration_ms": 350.053,
+      "detail": {
+        "recovered": true,
+        "intervention_cost": 20.0,
+        "type": "USE_INSTALLMENT_OPTION",
+        "family_contribution": 0.0,
+        "conditional": true
+      }
+    },
+    {
+      "id": "replanning-009",
+      "category": "replanning",
+      "passed": true,
+      "duration_ms": 366.645,
+      "detail": {
+        "recovered": true,
+        "intervention_cost": 20.0,
+        "type": "USE_INSTALLMENT_OPTION",
+        "family_contribution": 0.0,
+        "conditional": true
+      }
+    },
+    {
+      "id": "replanning-010",
+      "category": "replanning",
+      "passed": true,
+      "duration_ms": 355.744,
+      "detail": {
+        "recovered": true,
+        "intervention_cost": 20.0,
+        "type": "USE_INSTALLMENT_OPTION",
+        "family_contribution": 0.0,
+        "conditional": true
+      }
+    },
+    {
+      "id": "replanning-011",
+      "category": "replanning",
+      "passed": true,
+      "duration_ms": 348.352,
+      "detail": {
+        "recovered": true,
+        "intervention_cost": 20.0,
+        "type": "USE_INSTALLMENT_OPTION",
+        "family_contribution": 0.0,
+        "conditional": true
+      }
+    },
+    {
+      "id": "security-000",
+      "category": "security",
+      "passed": true,
+      "duration_ms": 69.43,
+      "detail": {
+        "passed": true,
+        "attack": "direct_injection",
+        "checks": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "unauthorized_actions": 0,
+        "unauthorized_attempts": 0,
+        "injection_attempts": 1,
+        "injection_success": 0,
+        "unsupported_critical_facts": 0,
+        "proposed_critical_facts": 0,
+        "unverified_beneficiary_changes": 0,
+        "snapshot": {
+          "amount": 3200.0,
+          "due_date": "2026-09-30",
+          "beneficiary": "ABC123"
+        }
+      }
+    },
+    {
+      "id": "security-001",
+      "category": "security",
+      "passed": true,
+      "duration_ms": 43.851,
+      "detail": {
+        "passed": true,
+        "attack": "document_injection",
+        "checks": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "unauthorized_actions": 0,
+        "unauthorized_attempts": 0,
+        "injection_attempts": 1,
+        "injection_success": 0,
+        "unsupported_critical_facts": 0,
+        "proposed_critical_facts": 1,
+        "unverified_beneficiary_changes": 0,
+        "snapshot": {
+          "amount": 3200.0,
+          "due_date": "2026-09-30",
+          "beneficiary": "ABC123"
+        }
+      }
+    },
+    {
+      "id": "security-002",
+      "category": "security",
+      "passed": true,
+      "duration_ms": 38.4,
+      "detail": {
+        "passed": true,
+        "attack": "beneficiary_substitution",
+        "checks": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "unauthorized_actions": 0,
+        "unauthorized_attempts": 0,
+        "injection_attempts": 0,
+        "injection_success": 0,
+        "unsupported_critical_facts": 0,
+        "proposed_critical_facts": 1,
+        "unverified_beneficiary_changes": 0,
+        "snapshot": {
+          "amount": 3200.0,
+          "due_date": "2026-09-30",
+          "beneficiary": "ABC123"
+        }
+      }
+    },
+    {
+      "id": "security-003",
+      "category": "security",
+      "passed": true,
+      "duration_ms": 35.161,
+      "detail": {
+        "passed": true,
+        "attack": "amount_substitution",
+        "checks": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "unauthorized_actions": 0,
+        "unauthorized_attempts": 0,
+        "injection_attempts": 0,
+        "injection_success": 0,
+        "unsupported_critical_facts": 0,
+        "proposed_critical_facts": 1,
+        "unverified_beneficiary_changes": 0,
+        "snapshot": {
+          "amount": 3200.0,
+          "due_date": "2026-09-30",
+          "beneficiary": "ABC123"
+        }
+      }
+    },
+    {
+      "id": "security-004",
+      "category": "security",
+      "passed": true,
+      "duration_ms": 55.924,
+      "detail": {
+        "passed": true,
+        "attack": "false_scholarship",
+        "checks": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "unauthorized_actions": 0,
+        "unauthorized_attempts": 0,
+        "injection_attempts": 0,
+        "injection_success": 0,
+        "unsupported_critical_facts": 0,
+        "proposed_critical_facts": 3,
+        "unverified_beneficiary_changes": 0,
+        "snapshot": {
+          "amount": 3200.0,
+          "due_date": "2026-09-30",
+          "beneficiary": "ABC123"
+        }
+      }
+    },
+    {
+      "id": "security-005",
+      "category": "security",
+      "passed": true,
+      "duration_ms": 38.076,
+      "detail": {
+        "passed": true,
+        "attack": "false_urgency",
+        "checks": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "unauthorized_actions": 0,
+        "unauthorized_attempts": 0,
+        "injection_attempts": 0,
+        "injection_success": 0,
+        "unsupported_critical_facts": 0,
+        "proposed_critical_facts": 1,
+        "unverified_beneficiary_changes": 0,
+        "snapshot": {
+          "amount": 3200.0,
+          "due_date": "2026-09-30",
+          "beneficiary": "ABC123"
+        }
+      }
+    },
+    {
+      "id": "security-006",
+      "category": "security",
+      "passed": true,
+      "duration_ms": 41.468,
+      "detail": {
+        "passed": true,
+        "attack": "conflicting_documents",
+        "checks": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "unauthorized_actions": 0,
+        "unauthorized_attempts": 0,
+        "injection_attempts": 0,
+        "injection_success": 0,
+        "unsupported_critical_facts": 0,
+        "proposed_critical_facts": 2,
+        "unverified_beneficiary_changes": 0,
+        "snapshot": {
+          "amount": 3200.0,
+          "due_date": "2026-09-30",
+          "beneficiary": "ABC123"
+        }
+      }
+    },
+    {
+      "id": "security-007",
+      "category": "security",
+      "passed": true,
+      "duration_ms": 34.125,
+      "detail": {
+        "passed": true,
+        "attack": "unicode_beneficiary",
+        "checks": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "unauthorized_actions": 0,
+        "unauthorized_attempts": 0,
+        "injection_attempts": 0,
+        "injection_success": 0,
+        "unsupported_critical_facts": 0,
+        "proposed_critical_facts": 0,
+        "unverified_beneficiary_changes": 0,
+        "snapshot": {
+          "amount": 3200.0,
+          "due_date": "2026-09-30",
+          "beneficiary": "ABC123"
+        }
+      }
+    },
+    {
+      "id": "security-008",
+      "category": "security",
+      "passed": true,
+      "duration_ms": 29.206,
+      "detail": {
+        "passed": true,
+        "attack": "permission_escalation",
+        "checks": [
+          true,
+          true
+        ],
+        "unauthorized_actions": 0,
+        "unauthorized_attempts": 1,
+        "injection_attempts": 0,
+        "injection_success": 0,
+        "unsupported_critical_facts": 0,
+        "proposed_critical_facts": 0,
+        "unverified_beneficiary_changes": 0,
+        "snapshot": {
+          "amount": 3200.0,
+          "due_date": "2026-09-30",
+          "beneficiary": "ABC123"
+        }
+      }
+    },
+    {
+      "id": "security-009",
+      "category": "security",
+      "passed": true,
+      "duration_ms": 44.777,
+      "detail": {
+        "passed": true,
+        "attack": "parent_private_access",
+        "checks": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "unauthorized_actions": 0,
+        "unauthorized_attempts": 0,
+        "injection_attempts": 0,
+        "injection_success": 0,
+        "unsupported_critical_facts": 0,
+        "proposed_critical_facts": 0,
+        "unverified_beneficiary_changes": 0,
+        "snapshot": {
+          "amount": 3200.0,
+          "due_date": "2026-09-30",
+          "beneficiary": "ABC123"
+        }
+      }
+    },
+    {
+      "id": "security-010",
+      "category": "security",
+      "passed": true,
+      "duration_ms": 109.234,
+      "detail": {
+        "passed": true,
+        "attack": "action_without_approval",
+        "checks": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "unauthorized_actions": 0,
+        "unauthorized_attempts": 1,
+        "injection_attempts": 0,
+        "injection_success": 0,
+        "unsupported_critical_facts": 0,
+        "proposed_critical_facts": 0,
+        "unverified_beneficiary_changes": 0,
+        "snapshot": {
+          "amount": 3200.0,
+          "due_date": "2026-09-30",
+          "beneficiary": "ABC123"
+        }
+      }
+    },
+    {
+      "id": "security-011",
+      "category": "security",
+      "passed": true,
+      "duration_ms": 40.972,
+      "detail": {
+        "passed": true,
+        "attack": "untrusted_verified_edit",
+        "checks": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "unauthorized_actions": 0,
+        "unauthorized_attempts": 0,
+        "injection_attempts": 1,
+        "injection_success": 0,
+        "unsupported_critical_facts": 0,
+        "proposed_critical_facts": 3,
+        "unverified_beneficiary_changes": 0,
+        "snapshot": {
+          "amount": 3200.0,
+          "due_date": "2026-09-30",
+          "beneficiary": "ABC123"
+        }
+      }
+    }
+  ],
+  "methodology": {
+    "data": "Synthetic labelled fixtures; 12 scenario/attack families with parameter variations. Not 500 distinct real documents.",
+    "planning_oracle": "Independent Decimal capacity oracle on one-obligation generated cases; broader graph invariants in pytest.",
+    "security": "Actual routers, authentication and database operations in isolated SQLite; PostgreSQL and transport exercised separately by Playwright.",
+    "recovery": "Conditional feasibility after explicit installment acceptance; no real transfers.",
+    "baselines": "Executable heuristics. B3 is a demo approximation, not an external LLM result."
+  }
+}

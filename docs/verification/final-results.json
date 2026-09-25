@@ -1,0 +1,193 @@
+{
+  "generated_at": "2026-09-25T10:50:22.151351+00:00",
+  "checks": [
+    {
+      "name": "backend-tests",
+      "command": [
+        "/workspace/lattice/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests",
+        "--junitxml=docs/verification/pytest.xml"
+      ],
+      "cwd": "/workspace/lattice",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 53.996
+    },
+    {
+      "name": "python-lint",
+      "command": [
+        "/workspace/lattice/.venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "apps/api",
+        "lattice_core",
+        "lattice_ai",
+        "optimizer",
+        "simulation",
+        "connectors",
+        "benchmark",
+        "tests",
+        "scripts",
+        "migrations"
+      ],
+      "cwd": "/workspace/lattice",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.033
+    },
+    {
+      "name": "frontend-tests",
+      "command": [
+        "npm",
+        "run",
+        "test",
+        "--",
+        "--reporter=json",
+        "--outputFile=/workspace/lattice/docs/verification/vitest.json"
+      ],
+      "cwd": "/workspace/lattice/apps/web",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 2.053
+    },
+    {
+      "name": "typescript",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "cwd": "/workspace/lattice/apps/web",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 3.679
+    },
+    {
+      "name": "frontend-lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "cwd": "/workspace/lattice/apps/web",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 3.986
+    },
+    {
+      "name": "production-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "cwd": "/workspace/lattice/apps/web",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 23.706
+    },
+    {
+      "name": "postgres-browser",
+      "command": [
+        "/workspace/lattice/.venv/bin/python",
+        "scripts/dev.py",
+        "--portable-postgres",
+        "--production",
+        "--fresh-db",
+        "--verify"
+      ],
+      "cwd": "/workspace/lattice",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 159.33
+    },
+    {
+      "name": "development-startup",
+      "command": [
+        "/workspace/lattice/.venv/bin/python",
+        "scripts/dev.py",
+        "--portable-postgres",
+        "--fresh-db",
+        "--startup-check"
+      ],
+      "cwd": "/workspace/lattice",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 9.682
+    },
+    {
+      "name": "benchmark-fast",
+      "command": [
+        "/workspace/lattice/.venv/bin/python",
+        "-m",
+        "benchmark.run",
+        "--mode",
+        "FAST"
+      ],
+      "cwd": "/workspace/lattice",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 5.782
+    },
+    {
+      "name": "benchmark-full",
+      "command": [
+        "/workspace/lattice/.venv/bin/python",
+        "-m",
+        "benchmark.run",
+        "--mode",
+        "FULL"
+      ],
+      "cwd": "/workspace/lattice",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 49.568
+    },
+    {
+      "name": "docker-build-compose",
+      "status": "BLOCKED",
+      "reason": "Docker CLI/daemon is not installed; no Docker build or native Compose runtime was executed."
+    }
+  ],
+  "tests": {
+    "backend": {
+      "tests": 358,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "frontend": {
+      "numTotalTests": 23,
+      "numPassedTests": 23,
+      "numFailedTests": 0,
+      "numPendingTests": 0
+    },
+    "playwright": {
+      "startTime": "2026-09-25T10:51:55.340Z",
+      "duration": 153356.084,
+      "expected": 11,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "fast": {
+      "id": "dc569435-96fe-4880-93ee-8e384174a94a",
+      "case_count": 48,
+      "passed": 48,
+      "failed": 0,
+      "duration_ms": 4987.977
+    },
+    "full": {
+      "id": "b9860c99-d93b-490b-aeb5-f7085323cd22",
+      "case_count": 500,
+      "passed": 500,
+      "failed": 0,
+      "duration_ms": 48768.853
+    }
+  },
+  "completed_at": "2026-09-25T10:55:33.974725+00:00"
+}

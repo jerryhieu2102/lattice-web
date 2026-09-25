@@ -1,0 +1,5 @@
+Scholarship notice
+Amount: 2000
+Currency: EUR
+Available from: 2026-09-25
+Status: EXPECTED

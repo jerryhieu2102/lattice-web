@@ -1,0 +1,9 @@
+cat > netlify.toml <<'EOF'
+[build]
+  base = "apps/web"
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+EOF

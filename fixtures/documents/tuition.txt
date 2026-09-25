@@ -1,0 +1,5 @@
+Type: TUITION
+Amount: 3200
+Currency: EUR
+Due date: 2026-09-30
+Beneficiary: ABC123
