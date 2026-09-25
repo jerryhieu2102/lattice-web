@@ -22,7 +22,7 @@ async function proxy(
         ? undefined
         : await request.arrayBuffer(),
       cache: "no-store",
-      signal: AbortSignal.timeout(120000),
+      signal: AbortSignal.timeout(55000),
     });
     const outgoing = new Headers();
     for (const key of ["content-type", "set-cookie", "content-disposition"]) {
