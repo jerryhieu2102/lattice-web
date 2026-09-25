@@ -23,6 +23,7 @@
     "zod": "4.6.5"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.16.0",
     "@playwright/test": "1.63.0",
     "@sparticuz/chromium": "153.0.0",
     "@tailwindcss/postcss": "4.3.3",
